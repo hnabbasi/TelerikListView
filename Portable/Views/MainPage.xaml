@@ -18,7 +18,13 @@
              xmlns:telerikCommon="clr-namespace:Telerik.XamarinForms.Common;assembly=Telerik.XamarinForms.Common"
              x:Class="TelerikListView.Portable.MainPage"
              Title="{Binding Title}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Guage" Clicked="Handle_Guage_Clicked"/>
+    </ContentPage.ToolbarItems>
     <telerikDataControls:RadListView ItemsSource="{Binding TeamStatus}">
+        <telerikDataControls:RadListView.LayoutDefinition>
+            <telerikListView:ListViewLinearLayout ItemLength="150" VerticalItemSpacing="2" />
+        </telerikDataControls:RadListView.LayoutDefinition>
         <telerikDataControls:RadListView.GroupDescriptors>
             <telerikListView:PropertyGroupDescriptor PropertyName="Name"/>
         </telerikDataControls:RadListView.GroupDescriptors>
@@ -26,29 +32,32 @@
             <DataTemplate>
                 <telerikListView:ListViewTemplateCell>
                     <telerikListView:ListViewTemplateCell.View>
-                        <StackLayout Padding="12" Orientation="Horizontal">
-                            <Label Text="{Binding Progress, StringFormat='Progress: {0}'}"
-                                   HorizontalOptions="FillAndExpand"/>
-                            <telerikGauges:RadHorizontalGauge>
-                                <telerikGauges:RadHorizontalGauge.Axis>
-                                    <telerikGauges:GaugeLinearAxis Maximum="100"
-                                           Minimum="0"
-                                           Step="25" />
-                                </telerikGauges:RadHorizontalGauge.Axis>
-                                <telerikGauges:RadHorizontalGauge.Indicators>
-                                    <telerikGauges:GaugeShapeIndicator Value="65" />
-                                </telerikGauges:RadHorizontalGauge.Indicators>
-                                <telerikGauges:RadHorizontalGauge.Ranges>
+                        <StackLayout Padding="12" Orientation="Horizontal" >
+                            <Label Text="{Binding Progress, StringFormat='Progress: {0}'}" HorizontalOptions="FillAndExpand"/>
+                            <telerikGauges:RadRadialGauge StartAngle="180" SweepAngle="180" HeightRequest="80" WidthRequest="100">
+                                <telerikGauges:RadRadialGauge.Axis>
+                                    <telerikGauges:GaugeLinearAxis Maximum="100" Minimum="0" Step="100" TextColor="Transparent" StrokeThickness="0" />
+                                </telerikGauges:RadRadialGauge.Axis>
+                                <telerikGauges:RadRadialGauge.Indicators>
+                                    <telerikGauges:GaugeRangeBarIndicator From="0" To="{Binding Progress}">
+                                        <telerikGauges:GaugeRangeBarIndicator.GradientStops>
+                                            <telerikCommon:RadGradientStop Offset="0" Color="Red" />
+                                            <telerikCommon:RadGradientStop Offset="25" Color="Orange" />
+                                            <telerikCommon:RadGradientStop Offset="50" Color="Yellow" />
+                                            <telerikCommon:RadGradientStop Offset="75" Color="Yellow" />
+                                            <telerikCommon:RadGradientStop Offset="100" Color="Green" />
+                                        </telerikGauges:GaugeRangeBarIndicator.GradientStops>
+                                    </telerikGauges:GaugeRangeBarIndicator>
+                                </telerikGauges:RadRadialGauge.Indicators>
+                                <telerikGauges:RadRadialGauge.Ranges>
                                     <telerikGauges:GaugeRangesDefinition>
                                         <telerikGauges:GaugeGradientRange From="0" To="100">
-                                            <telerikCommon:RadGradientStop Offset="0" Color="Red" />
-                                            <telerikCommon:RadGradientStop Offset="35" Color="Yellow" />
-                                            <telerikCommon:RadGradientStop Offset="65" Color="Yellow" />
-                                            <telerikCommon:RadGradientStop Offset="100" Color="Green" />
+                                            <telerikCommon:RadGradientStop Offset="0" Color="Silver" />
+                                            <telerikCommon:RadGradientStop Offset="100" Color="Silver" />
                                         </telerikGauges:GaugeGradientRange>
                                     </telerikGauges:GaugeRangesDefinition>
-                                </telerikGauges:RadHorizontalGauge.Ranges>
-                            </telerikGauges:RadHorizontalGauge>
+                                </telerikGauges:RadRadialGauge.Ranges>
+                            </telerikGauges:RadRadialGauge>
                         </StackLayout>
                     </telerikListView:ListViewTemplateCell.View>
                 </telerikListView:ListViewTemplateCell>
