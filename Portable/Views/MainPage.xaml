@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TelerikListView.Portable"
+             xmlns:vm="clr-namespace:TelerikListView.ViewModels"
+             xmlns:telerikPrimitives="clr-namespace:Telerik.XamarinForms.Primitives;assembly=Telerik.XamarinForms.Primitives"
+             xmlns:telerikDataControls="clr-namespace:Telerik.XamarinForms.DataControls;assembly=Telerik.XamarinForms.DataControls"
+             xmlns:telerikChart="clr-namespace:Telerik.XamarinForms.Chart;assembly=Telerik.XamarinForms.Chart"
+             xmlns:telerikInput="clr-namespace:Telerik.XamarinForms.Input;assembly=Telerik.XamarinForms.Input"
+             xmlns:telerikGauges="clr-namespace:Telerik.XamarinForms.DataVisualization.Gauges;assembly=Telerik.XamarinForms.DataVisualization"
+             xmlns:telerikGrid="clr-namespace:Telerik.XamarinForms.DataGrid;assembly=Telerik.XamarinForms.DataGrid"
+             xmlns:telerikBarcode="clr-namespace:Telerik.XamarinForms.Barcode;assembly=Telerik.XamarinForms.Barcode"
+             xmlns:telerikConversationalUI="clr-namespace:Telerik.XamarinForms.ConversationalUI;assembly=Telerik.XamarinForms.ConversationalUI"
+             xmlns:telerikImageEditor="clr-namespace:Telerik.XamarinForms.ImageEditor;assembly=Telerik.XamarinForms.ImageEditor"
+             xmlns:telerikMap="clr-namespace:Telerik.XamarinForms.Map;assembly=Telerik.XamarinForms.Map"
+             xmlns:telerikPdfViewer="clr-namespace:Telerik.XamarinForms.PdfViewer;assembly=Telerik.XamarinForms.PdfViewer"
+             xmlns:telerikListView="clr-namespace:Telerik.XamarinForms.DataControls.ListView;assembly=Telerik.XamarinForms.DataControls"
+             xmlns:telerikCommon="clr-namespace:Telerik.XamarinForms.Common;assembly=Telerik.XamarinForms.Common"
+             x:Class="TelerikListView.Portable.MainPage"
+             Title="{Binding Title}">
+    <telerikDataControls:RadListView ItemsSource="{Binding TeamStatus}">
+        <telerikDataControls:RadListView.GroupDescriptors>
+            <telerikListView:PropertyGroupDescriptor PropertyName="Name"/>
+        </telerikDataControls:RadListView.GroupDescriptors>
+        <telerikDataControls:RadListView.ItemTemplate>
+            <DataTemplate>
+                <telerikListView:ListViewTemplateCell>
+                    <telerikListView:ListViewTemplateCell.View>
+                        <StackLayout Padding="12" Orientation="Horizontal">
+                            <Label Text="{Binding Progress, StringFormat='Progress: {0}'}"
+                                   HorizontalOptions="FillAndExpand"/>
+                            <telerikGauges:RadHorizontalGauge>
+                                <telerikGauges:RadHorizontalGauge.Axis>
+                                    <telerikGauges:GaugeLinearAxis Maximum="100"
+                                           Minimum="0"
+                                           Step="25" />
+                                </telerikGauges:RadHorizontalGauge.Axis>
+                                <telerikGauges:RadHorizontalGauge.Indicators>
+                                    <telerikGauges:GaugeShapeIndicator Value="65" />
+                                </telerikGauges:RadHorizontalGauge.Indicators>
+                                <telerikGauges:RadHorizontalGauge.Ranges>
+                                    <telerikGauges:GaugeRangesDefinition>
+                                        <telerikGauges:GaugeGradientRange From="0" To="100">
+                                            <telerikCommon:RadGradientStop Offset="0" Color="Red" />
+                                            <telerikCommon:RadGradientStop Offset="35" Color="Yellow" />
+                                            <telerikCommon:RadGradientStop Offset="65" Color="Yellow" />
+                                            <telerikCommon:RadGradientStop Offset="100" Color="Green" />
+                                        </telerikGauges:GaugeGradientRange>
+                                    </telerikGauges:GaugeRangesDefinition>
+                                </telerikGauges:RadHorizontalGauge.Ranges>
+                            </telerikGauges:RadHorizontalGauge>
+                        </StackLayout>
+                    </telerikListView:ListViewTemplateCell.View>
+                </telerikListView:ListViewTemplateCell>
+            </DataTemplate>
+        </telerikDataControls:RadListView.ItemTemplate>
+    </telerikDataControls:RadListView>
+</ContentPage>
