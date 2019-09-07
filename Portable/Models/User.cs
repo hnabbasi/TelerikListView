@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using MvvmHelpers;
 
@@ -6,6 +7,14 @@ namespace TelerikListView.Models
 {
     public class User : ObservableObject
     {
+        //temp
+        private int _progress;
+
+        public User()
+        {
+            _progress = new Random().Next(0, 100);
+        }
+
         private string _name;
         public string Name
         {
@@ -30,7 +39,8 @@ namespace TelerikListView.Models
                 OnPropertyChanged(nameof(Total));
             }
         }
-        public double Progress => 65;// (Completed / Total) * 100;
+
+        public int Progress => _progress; //(Completed / Total) * 100;
         public int Completed => Tasks.Count(t => t.IsComplete);
         public int Total => Tasks.Count();
     }
