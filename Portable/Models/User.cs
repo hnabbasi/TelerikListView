@@ -7,12 +7,12 @@ namespace TelerikListView.Models
 {
     public class User : ObservableObject
     {
-        //temp
-        private int _progress;
-
         public User()
         {
-            _progress = new Random().Next(0, 100);
+            var r = new Random();
+            Total = r.Next(5, 20);
+            Completed = r.Next(1, Total - 1);
+            Progress = (Completed * 100) / Total;
         }
 
         private string _name;
@@ -21,27 +21,16 @@ namespace TelerikListView.Models
             get { return _name; }
             set { SetProperty(ref _name, value); }
         }
+
         private string _emailAddress;
         public string EmailAddress
         {
             get { return _emailAddress; }
             set { SetProperty(ref _emailAddress, value); }
         }
-        private IList<Task> _tasks;
-        public IList<Task> Tasks
-        {
-            get { return _tasks; }
-            set
-            {
-                SetProperty(ref _tasks, value);
-                OnPropertyChanged(nameof(Progress));
-                OnPropertyChanged(nameof(Completed));
-                OnPropertyChanged(nameof(Total));
-            }
-        }
 
-        public int Progress => _progress; //(Completed / Total) * 100;
-        public int Completed => Tasks.Count(t => t.IsComplete);
-        public int Total => Tasks.Count();
+        public int Progress { get; }
+        public int Completed { get; }
+        public int Total { get; }
     }
 }
