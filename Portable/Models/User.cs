@@ -5,31 +5,21 @@ using MvvmHelpers;
 
 namespace TelerikListView.Models
 {
-    public class User : ObservableObject
+    public class User
     {
         public User()
         {
             var r = new Random();
             Total = r.Next(5, 20);
-            Completed = r.Next(1, Total - 1);
+            Completed = r.Next(4, Total - 1);
             Progress = (Completed * 100) / Total;
+            Capacity = r.Next(25, 100);
         }
 
-        private string _name;
-        public string Name
-        {
-            get { return _name; }
-            set { SetProperty(ref _name, value); }
-        }
-
-        private string _emailAddress;
-        public string EmailAddress
-        {
-            get { return _emailAddress; }
-            set { SetProperty(ref _emailAddress, value); }
-        }
-
+        public string Name { get; set; }
+        public string EmailAddress { get; set; }
         public int Progress { get; }
+        public int Capacity { get; }
         public int Completed { get; }
         public int Total { get; }
     }

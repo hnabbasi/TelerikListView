@@ -18,9 +18,9 @@
              xmlns:telerikCommon="clr-namespace:Telerik.XamarinForms.Common;assembly=Telerik.XamarinForms.Common"
              x:Class="TelerikListView.Portable.MainPage"
              Title="{Binding Title}">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Gauge" Clicked="Handle_Guage_Clicked"/>
-    </ContentPage.ToolbarItems>
+    <!-- <ContentPage.ToolbarItems> -->
+    <!--     <ToolbarItem Text="Gauge" Clicked="Handle_Guage_Clicked"/> -->
+    <!-- </ContentPage.ToolbarItems> -->
     <ContentPage.Resources>
         <ResourceDictionary>
             <Color x:Key="TileColor">#f5f7fb</Color>
@@ -46,136 +46,17 @@
                HeightRequest="200" 
                HasShadow="False" 
                CornerRadius="40">
-            <Grid>
-                <telerikGauges:RadVerticalGauge>
-                    <telerikGauges:RadVerticalGauge.Axis>
-                        <telerikGauges:GaugeLinearAxis Maximum="100"
-                                                       Minimum="0"
-                                                       TextColor="Transparent"
-                                                       StrokeThickness="0"/>
-                    </telerikGauges:RadVerticalGauge.Axis>
-                    <telerikGauges:RadVerticalGauge.Indicators>
-                        <telerikGauges:GaugeRangeBarIndicator From="0"
-                                                              To="66">
-                            <telerikGauges:GaugeRangeBarIndicator.GradientStops>
-                                <telerikCommon:RadGradientStop Offset="0" Color="{StaticResource BlueDarkColor}" />
-                                <telerikCommon:RadGradientStop Offset="100" Color="{StaticResource BlueDarkColor}" />
-                            </telerikGauges:GaugeRangeBarIndicator.GradientStops>
-                        </telerikGauges:GaugeRangeBarIndicator>
-                    </telerikGauges:RadVerticalGauge.Indicators>
-                    <telerikGauges:RadVerticalGauge.Ranges>
-                        <telerikGauges:GaugeRangesDefinition>
-                            <telerikGauges:GaugeGradientRange From="0" To="100">
-                                <telerikCommon:RadGradientStop Offset="0" Color="{StaticResource BlueInactiveColor}" />
-                                <telerikCommon:RadGradientStop Offset="100" Color="{StaticResource BlueInactiveColor}" />
-                            </telerikGauges:GaugeGradientRange>
-                        </telerikGauges:GaugeRangesDefinition>
-                    </telerikGauges:RadVerticalGauge.Ranges>
-                </telerikGauges:RadVerticalGauge>
-                
-                <telerikGauges:RadVerticalGauge Grid.Column="1">
-                    <telerikGauges:RadVerticalGauge.Axis>
-                        <telerikGauges:GaugeLinearAxis Maximum="100"
-                                                       Minimum="0"
-                                                       TextColor="Transparent"
-                                                       StrokeThickness="0"/>
-                    </telerikGauges:RadVerticalGauge.Axis>
-                    <telerikGauges:RadVerticalGauge.Indicators>
-                        <telerikGauges:GaugeRangeBarIndicator From="0"
-                                                              To="66">
-                            <telerikGauges:GaugeRangeBarIndicator.GradientStops>
-                                <telerikCommon:RadGradientStop Offset="0" Color="{StaticResource BlueDarkColor}" />
-                                <telerikCommon:RadGradientStop Offset="100" Color="{StaticResource BlueDarkColor}" />
-                            </telerikGauges:GaugeRangeBarIndicator.GradientStops>
-                        </telerikGauges:GaugeRangeBarIndicator>
-                    </telerikGauges:RadVerticalGauge.Indicators>
-                    <telerikGauges:RadVerticalGauge.Ranges>
-                        <telerikGauges:GaugeRangesDefinition>
-                            <telerikGauges:GaugeGradientRange From="0" To="100">
-                                <telerikCommon:RadGradientStop Offset="0" Color="{StaticResource BlueInactiveColor}" />
-                                <telerikCommon:RadGradientStop Offset="100" Color="{StaticResource BlueInactiveColor}" />
-                            </telerikGauges:GaugeGradientRange>
-                        </telerikGauges:GaugeRangesDefinition>
-                    </telerikGauges:RadVerticalGauge.Ranges>
-                </telerikGauges:RadVerticalGauge>
-                
-                <telerikGauges:RadVerticalGauge Grid.Column="2">
-                    <telerikGauges:RadVerticalGauge.Axis>
-                        <telerikGauges:GaugeLinearAxis Maximum="100"
-                                                       Minimum="0"
-                                                       TextColor="Transparent"
-                                                       StrokeThickness="0"/>
-                    </telerikGauges:RadVerticalGauge.Axis>
-                    <telerikGauges:RadVerticalGauge.Indicators>
-                        <telerikGauges:GaugeRangeBarIndicator From="0"
-                                                              To="66">
-                            <telerikGauges:GaugeRangeBarIndicator.GradientStops>
-                                <telerikCommon:RadGradientStop Offset="0" Color="{StaticResource BlueDarkColor}" />
-                                <telerikCommon:RadGradientStop Offset="100" Color="{StaticResource BlueDarkColor}" />
-                            </telerikGauges:GaugeRangeBarIndicator.GradientStops>
-                        </telerikGauges:GaugeRangeBarIndicator>
-                    </telerikGauges:RadVerticalGauge.Indicators>
-                    <telerikGauges:RadVerticalGauge.Ranges>
-                        <telerikGauges:GaugeRangesDefinition>
-                            <telerikGauges:GaugeGradientRange From="0" To="100">
-                                <telerikCommon:RadGradientStop Offset="0" Color="{StaticResource BlueInactiveColor}" />
-                                <telerikCommon:RadGradientStop Offset="100" Color="{StaticResource BlueInactiveColor}" />
-                            </telerikGauges:GaugeGradientRange>
-                        </telerikGauges:GaugeRangesDefinition>
-                    </telerikGauges:RadVerticalGauge.Ranges>
-                </telerikGauges:RadVerticalGauge>
-                
-                <telerikGauges:RadVerticalGauge Grid.Column="3">
-                    <telerikGauges:RadVerticalGauge.Axis>
-                        <telerikGauges:GaugeLinearAxis Maximum="100"
-                                                       Minimum="0"
-                                                       TextColor="Transparent"
-                                                       StrokeThickness="0"/>
-                    </telerikGauges:RadVerticalGauge.Axis>
-                    <telerikGauges:RadVerticalGauge.Indicators>
-                        <telerikGauges:GaugeRangeBarIndicator From="0"
-                                                              To="66">
-                            <telerikGauges:GaugeRangeBarIndicator.GradientStops>
-                                <telerikCommon:RadGradientStop Offset="0" Color="{StaticResource BlueDarkColor}" />
-                                <telerikCommon:RadGradientStop Offset="100" Color="{StaticResource BlueDarkColor}" />
-                            </telerikGauges:GaugeRangeBarIndicator.GradientStops>
-                        </telerikGauges:GaugeRangeBarIndicator>
-                    </telerikGauges:RadVerticalGauge.Indicators>
-                    <telerikGauges:RadVerticalGauge.Ranges>
-                        <telerikGauges:GaugeRangesDefinition>
-                            <telerikGauges:GaugeGradientRange From="0" To="100">
-                                <telerikCommon:RadGradientStop Offset="0" Color="{StaticResource BlueInactiveColor}" />
-                                <telerikCommon:RadGradientStop Offset="100" Color="{StaticResource BlueInactiveColor}" />
-                            </telerikGauges:GaugeGradientRange>
-                        </telerikGauges:GaugeRangesDefinition>
-                    </telerikGauges:RadVerticalGauge.Ranges>
-                </telerikGauges:RadVerticalGauge>
-                
-                <telerikGauges:RadVerticalGauge Grid.Column="4">
-                    <telerikGauges:RadVerticalGauge.Axis>
-                        <telerikGauges:GaugeLinearAxis Maximum="100"
-                                                       Minimum="0"
-                                                       TextColor="Transparent"
-                                                       StrokeThickness="0"/>
-                    </telerikGauges:RadVerticalGauge.Axis>
-                    <telerikGauges:RadVerticalGauge.Indicators>
-                        <telerikGauges:GaugeRangeBarIndicator From="0"
-                                                              To="66">
-                            <telerikGauges:GaugeRangeBarIndicator.GradientStops>
-                                <telerikCommon:RadGradientStop Offset="0" Color="{StaticResource BlueDarkColor}" />
-                                <telerikCommon:RadGradientStop Offset="100" Color="{StaticResource BlueDarkColor}" />
-                            </telerikGauges:GaugeRangeBarIndicator.GradientStops>
-                        </telerikGauges:GaugeRangeBarIndicator>
-                    </telerikGauges:RadVerticalGauge.Indicators>
-                    <telerikGauges:RadVerticalGauge.Ranges>
-                        <telerikGauges:GaugeRangesDefinition>
-                            <telerikGauges:GaugeGradientRange From="0" To="100">
-                                <telerikCommon:RadGradientStop Offset="0" Color="{StaticResource BlueInactiveColor}" />
-                                <telerikCommon:RadGradientStop Offset="100" Color="{StaticResource BlueInactiveColor}" />
-                            </telerikGauges:GaugeGradientRange>
-                        </telerikGauges:GaugeRangesDefinition>
-                    </telerikGauges:RadVerticalGauge.Ranges>
-                </telerikGauges:RadVerticalGauge>
+            <Grid Padding="10,40,10,10">
+                <telerikChart:RadCartesianChart BackgroundColor="{StaticResource BlueInactiveColor}">
+                    <telerikChart:RadCartesianChart.Series>
+                        <telerikChart:BarSeries CategoryBinding="Name"
+                                                ValueBinding="OpenTasks"
+                                                ItemsSource="{Binding Burndown}"/>
+                    </telerikChart:RadCartesianChart.Series>
+                    <telerikChart:RadCartesianChart.HorizontalAxis>
+                        <telerikChart:CategoricalAxis LabelFitMode="MultiLine" />
+                    </telerikChart:RadCartesianChart.HorizontalAxis>
+                </telerikChart:RadCartesianChart>
             </Grid>
         </Frame>
         <telerikDataControls:RadListView 
@@ -222,7 +103,8 @@
                                                                   StartAngle="90"
                                                                   SweepAngle="360"
                                                                   HeightRequest="200"
-                                                                  WidthRequest="200">
+                                                                  WidthRequest="200"
+                                                                  Margin="0,20,0,0">
                                         <telerikGauges:RadRadialGauge.Axis>
                                             <telerikGauges:GaugeLinearAxis Maximum="100"
                                                                            Minimum="0"
@@ -249,9 +131,18 @@
                                         </telerikGauges:RadRadialGauge.Ranges>
                                     </telerikGauges:RadRadialGauge>
                                     <Label
+                                           Text="Tasks"
                                            HorizontalTextAlignment="Center"
                                            FontSize="Medium"
-                                           VerticalOptions="Center">
+                                           VerticalOptions="Start"
+                                           Margin="0,25,0,0"
+                                           TextColor="Gray"/>
+                                    <Label
+                                           HorizontalTextAlignment="Center"
+                                           FontSize="Medium"
+                                           VerticalOptions="Center"
+                                           Margin="0,20,0,0"
+                                           TextColor="{StaticResource BlueActiveColor}">
                                         <Label.FormattedText>
                                             <FormattedString>
                                                 <Span Text="{Binding Completed}" FontSize="Medium"/>
@@ -268,7 +159,8 @@
                                                                   StartAngle="90"
                                                                   SweepAngle="360"
                                                                   HeightRequest="200"
-                                                                  WidthRequest="200">
+                                                                  WidthRequest="200"
+                                                                  Margin="0,20,0,0">
                                         <telerikGauges:RadRadialGauge.Axis>
                                             <telerikGauges:GaugeLinearAxis Maximum="100"
                                                                            Minimum="0"
@@ -278,7 +170,7 @@
                                         </telerikGauges:RadRadialGauge.Axis>
                                         <telerikGauges:RadRadialGauge.Indicators>
                                             <telerikGauges:GaugeRangeBarIndicator From="0"
-                                                                                  To="{Binding Progress}">
+                                                                                  To="{Binding Capacity}">
                                                 <telerikGauges:GaugeRangeBarIndicator.GradientStops>
                                                     <telerikCommon:RadGradientStop Offset="0" Color="{StaticResource GreenActiveColor}" />
                                                     <telerikCommon:RadGradientStop Offset="100" Color="{StaticResource GreenActiveColor}" />
@@ -295,10 +187,19 @@
                                         </telerikGauges:RadRadialGauge.Ranges>
                                     </telerikGauges:RadRadialGauge>
                                     <Label Grid.Column="1"
-                                           Text="{Binding Progress, StringFormat='{0}%'}"
+                                           Text="Capacity"
                                            HorizontalTextAlignment="Center"
                                            FontSize="Medium"
-                                           VerticalOptions="Center"/>
+                                           VerticalOptions="Start"
+                                           Margin="0,25,0,0"
+                                           TextColor="Gray"/>
+                                    <Label Grid.Column="1"
+                                           Text="{Binding Capacity, StringFormat='{0}%'}"
+                                           HorizontalTextAlignment="Center"
+                                           FontSize="Medium"
+                                           VerticalOptions="Center"
+                                           Margin="0,20,0,0"
+                                           TextColor="{StaticResource GreenActiveColor}"/>
                                 </Grid>
                         </telerikListView:ListViewTemplateCell.View>
                     </telerikListView:ListViewTemplateCell>
