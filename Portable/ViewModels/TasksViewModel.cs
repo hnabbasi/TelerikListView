@@ -22,10 +22,8 @@ namespace TelerikListView.ViewModels
             return new ObservableCollection<Sprint>
             {
                 new Sprint { Name = "Sprint 13", OpenTasks = 92 },
-                new Sprint { Name = "Sprint 14", OpenTasks = 71 },
                 new Sprint { Name = "Sprint 15", OpenTasks = 58 },
                 new Sprint { Name = "Sprint 16", OpenTasks = 38 },
-                new Sprint { Name = "Sprint 17", OpenTasks = 18 },
                 new Sprint { Name = "Sprint 18", OpenTasks = 9 }
             };
         }

@@ -3,8 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TelerikListView.Portable.App">
 	<Application.Resources>
-
-		<!-- Application resource dictionary -->
-
+        <ResourceDictionary>
+            <Color x:Key="TileColor">#f5f7fb</Color>
+            <Color x:Key="BackgroundColor">#f4f6fa</Color>
+            <Color x:Key="RedColor">#fe4a4a</Color>
+            <Color x:Key="WhiteColor">#ffffff</Color>
+            <Color x:Key="BlueActiveColor">#2877ff</Color>
+            <Color x:Key="BlueInactiveColor">#e0e8f8</Color>
+            <Color x:Key="BlueDarkColor">#ffffff</Color>
+            <Color x:Key="GreenActiveColor">#00c191</Color>
+            <Color x:Key="GreenInactiveColor">#dcefed</Color>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource BlueActiveColor}"/>
+                <Setter Property="BarTextColor" Value="White"/>
+            </Style>
+        </ResourceDictionary>
 	</Application.Resources>
 </Application>

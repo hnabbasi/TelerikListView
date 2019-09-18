@@ -18,22 +18,6 @@
              xmlns:telerikCommon="clr-namespace:Telerik.XamarinForms.Common;assembly=Telerik.XamarinForms.Common"
              x:Class="TelerikListView.Portable.MainPage"
              Title="{Binding Title}">
-    <!-- <ContentPage.ToolbarItems> -->
-    <!--     <ToolbarItem Text="Gauge" Clicked="Handle_Guage_Clicked"/> -->
-    <!-- </ContentPage.ToolbarItems> -->
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Color x:Key="TileColor">#f5f7fb</Color>
-            <Color x:Key="BackgroundColor">#f4f6fa</Color>
-            <Color x:Key="RedColor">#fe4a4a</Color>
-            <Color x:Key="WhiteColor">#ffffff</Color>
-            <Color x:Key="BlueActiveColor">#2877ff</Color>
-            <Color x:Key="BlueInactiveColor">#e0e8f8</Color>
-            <Color x:Key="BlueDarkColor">#ffffff</Color>
-            <Color x:Key="GreenActiveColor">#00c191</Color>
-            <Color x:Key="GreenInactiveColor">#dcefed</Color>
-        </ResourceDictionary>
-    </ContentPage.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -46,23 +30,30 @@
                HeightRequest="200" 
                HasShadow="False" 
                CornerRadius="40">
-            <Grid Padding="10,40,10,10">
-                <telerikChart:RadCartesianChart BackgroundColor="{StaticResource BlueInactiveColor}">
-                    <telerikChart:RadCartesianChart.Series>
-                        <telerikChart:BarSeries CategoryBinding="Name"
+            <telerikChart:RadCartesianChart BackgroundColor="{StaticResource BlueActiveColor}">
+                <telerikChart:RadCartesianChart.HorizontalAxis>
+                    <telerikChart:CategoricalAxis LabelFitMode="MultiLine"
+                                                    PlotMode="OnTicks"
+                                                    LabelFontSize="10"
+                                                    LabelTextColor="White"
+                                                    />
+                </telerikChart:RadCartesianChart.HorizontalAxis>
+                <telerikChart:RadCartesianChart.VerticalAxis>
+                    <telerikChart:NumericalAxis ShowLabels="False" MajorStep="25" />
+                </telerikChart:RadCartesianChart.VerticalAxis>
+                <telerikChart:RadCartesianChart.Series>
+                    <telerikChart:SplineAreaSeries Fill="White"
+                                                Stroke="{StaticResource BlueInactiveColor}"
                                                 ValueBinding="OpenTasks"
+                                                CategoryBinding="Name"
                                                 ItemsSource="{Binding Burndown}"/>
-                    </telerikChart:RadCartesianChart.Series>
-                    <telerikChart:RadCartesianChart.HorizontalAxis>
-                        <telerikChart:CategoricalAxis LabelFitMode="MultiLine" />
-                    </telerikChart:RadCartesianChart.HorizontalAxis>
-                </telerikChart:RadCartesianChart>
-            </Grid>
+                </telerikChart:RadCartesianChart.Series>
+            </telerikChart:RadCartesianChart>
         </Frame>
         <telerikDataControls:RadListView 
             ItemsSource="{Binding TeamStatus}"
             Grid.Row="1"
-            BackgroundColor="{StaticResource BackgroundColor}">
+            BackgroundColor="White">
             <telerikDataControls:RadListView.LayoutDefinition>
                 <telerikListView:ListViewLinearLayout ItemLength="200" />
             </telerikDataControls:RadListView.LayoutDefinition>
