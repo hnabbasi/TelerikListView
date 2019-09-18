@@ -298,3 +298,5 @@ __pycache__/
 *.odx.cs
 *.xsd.cs
 Portable/.DS_Store
+*.db
+Android/Resources/Resource.designer.cs
